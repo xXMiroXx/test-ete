@@ -1,1 +1,11 @@
+@use "./base/utilities";
 @use "./base/base";
+@use "./themes/colors";
+@use "./themes/measures" as *;
+@use "./themes/mixins";
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: $m-sm;
+}

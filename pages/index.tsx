@@ -1,14 +1,21 @@
-import type { NextPage } from "next";
-import Head from "next/head";
-import Image from "next/image";
-import { ComponentType } from "react";
+import type { GetStaticProps, NextPage } from "next";
+
 import Layout from "@/Components/Layout/Layout";
-const Home: NextPage = () => {
+import getNav from "helper/getNav";
+import { NavListProps } from "@/Components/Layout/type";
+
+const Home: NextPage<{ navList: NavListProps }> = (props) => {
   return (
-    <Layout>
+    <Layout list={props.navList}>
       <div>Hello</div>
     </Layout>
   );
+};
+
+export const getStaticProps: GetStaticProps = () => {
+  const navList = getNav();
+  console.log(navList);
+  return { props: { navList } };
 };
 
 export default Home;

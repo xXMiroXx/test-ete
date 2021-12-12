@@ -1,10 +1,11 @@
 import { NextComponentType } from "next";
 import Navbar from "./Navbar/Navbar";
+import { NavListProps } from "./type";
 
-const Layout: NextComponentType = (props) => {
+const Layout: React.FC<{ list: NavListProps }> = (props) => {
   return (
     <>
-      <Navbar />
+      <Navbar list={props.list} />
       <main>{props.children}</main>
     </>
   );

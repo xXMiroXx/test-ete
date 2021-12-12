@@ -1,11 +1,11 @@
 import { NextComponentType } from "next";
 import NavList from "./NavList";
-import { NavListProps } from "./type";
+import { NavListProps } from "../type";
 
-const Navbar: NextComponentType<{ list: NavListProps }> = (list) => {
+const Navbar: React.FC<{ list: NavListProps }> = (props) => {
   return (
     <div>
-      <NavList />
+      <NavList navList={props.list} />
     </div>
   );
 };
