@@ -1,9 +1,11 @@
+import { IconType } from "react-icons";
 import SubList from "./SubList";
 import Styles from "./Sublists.module.scss";
 
 const ServicesList: React.FC = () => {
+  const icon = "FaBars" as never;
   return (
-    <SubList name="الخدمات" icon="FaCogs">
+    <SubList name="الخدمات" icon={icon as never}>
       <ul className={Styles.list}>
         <li>service 1</li>
         <li>service 2</li>
