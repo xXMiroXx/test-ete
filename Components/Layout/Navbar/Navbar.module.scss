@@ -4,25 +4,44 @@
   padding: $p-sm;
 
   &__list {
+    transition: all 0.5s;
     position: absolute;
     top: 100%;
+    transform: translateY(-200%);
+    visibility: hidden;
+    background-color: $grey;
+    width: 80%;
     @media (min-width: 850px) {
       display: flex;
       position: unset;
+      margin-inline-start: $m-lg;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    &--active {
+      visibility: visible;
+      transform: translateY(0);
     }
   }
 
   &__item {
     margin: 0 $m-md;
     &--active {
-      color: $primary;
+      color: $primary-light;
+      border-bottom: 2px solid $primary;
     }
   }
 
   &__switch {
+    svg {
+      display: block;
+    }
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     border: none;
     background: transparent;
     color: $primary;
-    font-size: $fs-md;
+    font-size: $fs-lg;
   }
 }
