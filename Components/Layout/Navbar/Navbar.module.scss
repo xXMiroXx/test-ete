@@ -11,13 +11,6 @@
     visibility: hidden;
     background-color: $grey;
     width: 80%;
-    @media (min-width: 850px) {
-      display: flex;
-      position: unset;
-      margin-inline-start: $m-lg;
-      visibility: visible;
-      transform: translateY(0);
-    }
     &--active {
       visibility: visible;
       transform: translateY(0);
@@ -43,5 +36,17 @@
     background: transparent;
     color: $primary;
     font-size: $fs-lg;
+  }
+  @media (min-width: 850px) {
+    &__list {
+      display: flex;
+      position: unset;
+      margin-inline-start: $m-lg;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    &__switch {
+      display: none;
+    }
   }
 }

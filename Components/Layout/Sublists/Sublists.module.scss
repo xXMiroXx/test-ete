@@ -1,0 +1,25 @@
+@use "@/Styles/themes/measures" as *;
+@use "@/Styles/themes/colors" as *;
+
+.sublist {
+  margin: 0 $m-sm;
+  &__btn {
+    font-size: inherit;
+    font-family: inherit;
+    background-color: transparent;
+    border: none;
+    color: inherit;
+  }
+  &__body {
+    display: none;
+    @media (min-width: 850px) {
+      position: absolute;
+      background-color: $grey;
+      padding: $p-md;
+      border-radius: $r-md;
+    }
+    &--active {
+      display: block;
+    }
+  }
+}
