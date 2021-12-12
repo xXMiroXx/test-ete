@@ -11,13 +11,13 @@ const NavItem: React.FC<{ item: NavItemProps }> = ({ item }) => {
   const router = useRouter();
   const isActive = router.pathname === item.link;
   return (
-    <li>
+    <li
+      className={` ${Styles.nav__item} ${
+        (isActive && Styles["nav__item--active"]) || ""
+      }`}
+    >
       <Link href={item.link}>
-        <a
-          className={`${Styles.nav__item} ${
-            (isActive && Styles["nav__item--active"]) || ""
-          }`}
-        >
+        <a>
           <div className="item">
             <Icon />
             {item.name}

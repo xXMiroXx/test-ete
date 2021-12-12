@@ -1,8 +1,28 @@
 @use "@/Styles/themes/colors" as *;
+@use "@/Styles/themes/measures" as *;
 .nav {
+  padding: $p-sm;
+
+  &__list {
+    position: absolute;
+    top: 100%;
+    @media (min-width: 850px) {
+      display: flex;
+      position: unset;
+    }
+  }
+
   &__item {
+    margin: 0 $m-md;
     &--active {
       color: $primary;
     }
+  }
+
+  &__switch {
+    border: none;
+    background: transparent;
+    color: $primary;
+    font-size: $fs-md;
   }
 }

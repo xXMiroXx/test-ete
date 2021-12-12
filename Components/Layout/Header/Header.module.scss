@@ -1,6 +1,7 @@
 @use "@/Styles/themes/colors" as *;
 .header {
   position: relative;
+  min-height: 6rem;
   background-color: $grey;
   color: $grey-lighter;
   &__nav {
@@ -11,6 +12,7 @@
     width: 5rem;
     height: 4rem;
     left: 1rem;
-    top: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
