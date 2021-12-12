@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import LayoutContext from "../LayoutContext";
-import { NavListProps } from "../type";
 import NavItem from "./NavItem";
 
 const NavList: React.FC = () => {
