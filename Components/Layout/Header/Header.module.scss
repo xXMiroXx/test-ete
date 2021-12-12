@@ -1,0 +1,16 @@
+@use "@/Styles/themes/colors" as *;
+.header {
+  position: relative;
+  background-color: $grey;
+  color: $grey-lighter;
+  &__nav {
+  }
+
+  &__logo {
+    position: absolute;
+    width: 5rem;
+    height: 4rem;
+    left: 1rem;
+    top: 0.5rem;
+  }
+}
