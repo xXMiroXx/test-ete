@@ -1,12 +1,12 @@
 import { NextComponentType } from "next";
 import NavList from "./NavList";
 import { NavListProps } from "../type";
-
-const Navbar: React.FC<{ list: NavListProps }> = (props) => {
+import Styles from "./Navbar.module.scss";
+const Navbar: React.FC = (props) => {
   return (
-    <div>
-      <NavList navList={props.list} />
-    </div>
+    <nav className={Styles.nav}>
+      <NavList />
+    </nav>
   );
 };
 export default Navbar;

@@ -5,16 +5,11 @@ import getNav from "helper/getNav";
 import { NavListProps } from "@/Components/Layout/type";
 
 const Home: NextPage<{ navList: NavListProps }> = (props) => {
-  return (
-    <Layout list={props.navList}>
-      <div>Hello</div>
-    </Layout>
-  );
+  return <Layout navList={props.navList}></Layout>;
 };
 
 export const getStaticProps: GetStaticProps = () => {
   const navList = getNav();
-  console.log(navList);
   return { props: { navList } };
 };
 

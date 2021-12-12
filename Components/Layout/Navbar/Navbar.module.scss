@@ -1,0 +1,8 @@
+@use "@/Styles/themes/colors" as *;
+.nav {
+  &__item {
+    &--active {
+      color: $primary;
+    }
+  }
+}

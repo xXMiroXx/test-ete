@@ -7,7 +7,7 @@
 .item {
   display: flex;
   align-items: center;
-  > *:first-child {
+  svg {
     margin-inline-end: $m-sm;
   }
 }

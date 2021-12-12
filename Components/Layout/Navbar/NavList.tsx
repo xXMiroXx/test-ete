@@ -1,14 +1,16 @@
-import { NextComponentType } from "next";
+import { useContext } from "react";
+import LayoutContext from "../LayoutContext";
 import { NavListProps } from "../type";
 import NavItem from "./NavItem";
 
-const NavList: React.FC<{ navList: NavListProps }> = (props) => {
+const NavList: React.FC = () => {
+  const ctx = useContext(LayoutContext);
   return (
     <nav>
       <ul>
-        <NavItem item={props.navList[0]} />
-        <NavItem item={props.navList[1]} />
-        <NavItem item={props.navList[2]} />
+        {ctx.navList.map((item) => (
+          <NavItem key={item.name} item={item} />
+        ))}
       </ul>
     </nav>
   );
