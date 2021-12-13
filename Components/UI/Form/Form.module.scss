@@ -5,7 +5,7 @@
   padding: $p-md;
   width: 90%;
   margin: auto;
-  border-radius: $r-lg;
+  border-radius: $r-ms;
   background-color: $grey-lighter;
   &__header {
     text-align: center;
@@ -30,6 +30,7 @@
   }
 
   &__input {
+    padding: $p-md 0;
     width: 100%;
     background-color: transparent;
     border: none;
