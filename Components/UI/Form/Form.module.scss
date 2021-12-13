@@ -1,0 +1,22 @@
+.form {
+}
+
+.input {
+  &__field {
+    display: flex;
+  }
+
+  &__input {
+    border: none;
+    display: block;
+  }
+
+  &__label {
+    display: flex;
+    margin-inline-end: 2rem;
+  }
+
+  &__note {
+    min-height: 3rem;
+  }
+}
