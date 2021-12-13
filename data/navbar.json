@@ -1,5 +1,5 @@
 [
   { "name": "الرئيسية", "link": "/", "icon": "FaHome" },
   { "name": "من نحن", "link": "/who", "icon": "FaUsers" },
-  { "name": "اتصل بنا", "link": "#contact", "icon": "FaPhone" }
+  { "name": "اتصل بنا", "link": "/call", "icon": "FaPhone" }
 ]

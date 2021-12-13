@@ -1,21 +1,10 @@
+@import "@/Styles/themes/themes";
 .form {
   margin: 0 auto;
+  background-color: $grey-lighter;
+  border-radius: $r-md;
+  width: 90%;
   &__head {
     text-align: center;
-  }
-  &__input {
-    padding: 1rem;
-    font-size: inherit;
-    border: none;
-    color: inherit;
-    &::placeholder {
-      font-size: inherit;
-      font-family: inherit;
-      color: inherit;
-    }
-    &:focus {
-      outline: none;
-      border-bottom: 2px solid #333;
-    }
   }
 }

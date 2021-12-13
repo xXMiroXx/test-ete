@@ -1,29 +1,29 @@
-import React from "react";
+import React, { Reducer, useReducer } from "react";
+import { InputField } from "./Inputs/BaseInput";
 import EmailInput from "./Inputs/EmailInput";
-import { FormState } from "./type";
+import { FormAction, FormProps, FormState } from "./type";
+import Styles from "./Form.module.scss";
+const Form: React.FC<FormProps> = (props) => {
+  return (
+    <form className={Styles.form}>
+      <header className={Styles.form__header}>{props.name}</header>
+      <main className={Styles.form__body}>{props.children}</main>
+      <footer className={Styles.form__footer}>
+        <button
+          className={`${Styles["form__submit-btn"]} btn btn-primary`}
+          type="submit"
+        >
+          {props.submitBtn}
+        </button>
+        <button
+          className={`${Styles["form__secondary-btn"]} btn btn-secondary`}
+          type="button"
+        >
+          {props.secondaryBtn}
+        </button>
+      </footer>
+    </form>
+  );
+};
 
-export default class Form extends React.Component<{}, FormState> {
-  setInputHanlder(
-    id: string
-  ): (value: string, status: boolean, note: string) => void {
-    return (value, status, note) => {
-      const fieldIndex = this.state.inputFields.findIndex((e) => e.id === id);
-
-      if (fieldIndex !== -1) {
-        this.setState((cur) => {
-          const inputFields = [...cur.inputFields];
-
-          inputFields[fieldIndex] = { id, value, note, status };
-
-          const formState = inputFields.some((input) => !input.status);
-
-          return { formState, inputFields };
-        });
-      }
-    };
-  }
-
-  render(): React.ReactNode {
-    return <form> </form>;
-  }
-}
+export default Form;

@@ -1,20 +1,57 @@
 @use "@/Styles/themes/themes" as *;
 
+// Form
+.form {
+  padding: $p-md;
+  width: 90%;
+  margin: auto;
+  border-radius: $r-lg;
+  background-color: $grey-lighter;
+  &__header {
+    text-align: center;
+  }
+  &__footer {
+    padding: $p-md;
+  }
+  &__secondary-btn {
+    float: left;
+  }
+}
+
+// Inputs
 .input {
+  padding: 0 $p-md;
+  width: 100%;
+  border-bottom: 1px solid $grey;
   &__field {
     display: flex;
+    align-items: center;
+    border-bottom: 2px solid transparent;
   }
 
   &__input {
+    width: 100%;
+    background-color: transparent;
     border: none;
     display: block;
     font-size: $fs-md;
     outline: none;
+    &::placeholder {
+      font-family: $ff-cairo;
+    }
   }
 
   &__label {
     display: flex;
     margin-inline-end: 2rem;
+  }
+
+  &__clear {
+    background-color: transparent;
+    border: none;
+    color: lighten($grey-light, 20%);
+    font-size: inherit;
+    margin: 0 $m-md;
   }
 
   &__note {
@@ -23,16 +60,30 @@
     // border-bottom: 2px solid grey;
   }
 
-  &--focused.input {
-    &--valid .input {
+  &--valid.input {
+    &--focused .input {
       &__field {
         border-bottom: 2px solid $success;
       }
+      &__note {
+        color: $success;
+      }
     }
-    &--invalid .input {
+    .input__flag {
+      color: $success;
+    }
+  }
+  &--invalid.input {
+    &--focused .input {
       &__field {
         border-bottom: 2px solid $warning;
       }
+      &__note {
+        color: $warning;
+      }
+    }
+    .input__flag {
+      color: $warning;
     }
   }
 }
