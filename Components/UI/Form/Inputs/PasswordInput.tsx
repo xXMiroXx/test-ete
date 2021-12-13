@@ -8,7 +8,7 @@ export default class PasswordInput extends BaseInput {
 
   validator(input: string): { status: boolean; note: string } {
     if (input.length < 8)
-      return { status: false, note: "كلمة السر قصيرة جداً" };
+      return { status: false, note: " كلمة السر قصيرة (8 رموز حد ادني)" };
     return { status: true, note: "" };
   }
 }

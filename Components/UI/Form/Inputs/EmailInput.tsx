@@ -7,8 +7,10 @@ export default class EmailInput extends BaseInput {
   placeHolder = "email";
 
   validator(input: string): { status: boolean; note: string } {
-    console.log(input);
-    return { status: false, note: "صيغة البريد غير سليمة" };
-    return { status: true, note: "" };
+    const matched = input.match(/\w+@\w+\.\w+/);
+    console.log(matched);
+    if (matched && matched[0].length === input.length)
+      return { status: true, note: "" };
+    return { status: false, note: "صيغهة البريد غير مكتملة" };
   }
 }

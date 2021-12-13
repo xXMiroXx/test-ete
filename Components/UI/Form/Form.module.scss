@@ -1,5 +1,4 @@
-.form {
-}
+@use "@/Styles/themes/themes" as *;
 
 .input {
   &__field {
@@ -9,6 +8,8 @@
   &__input {
     border: none;
     display: block;
+    font-size: $fs-md;
+    outline: none;
   }
 
   &__label {
@@ -18,5 +19,20 @@
 
   &__note {
     min-height: 3rem;
+    font-size: $fs-sm;
+    // border-bottom: 2px solid grey;
+  }
+
+  &--focused.input {
+    &--valid .input {
+      &__field {
+        border-bottom: 2px solid $success;
+      }
+    }
+    &--invalid .input {
+      &__field {
+        border-bottom: 2px solid $warning;
+      }
+    }
   }
 }
