@@ -38,7 +38,9 @@
     font-size: $fs-md;
     outline: none;
     &::placeholder {
-      font-family: $ff-cairo;
+      font-family: $ff-kufi;
+      vertical-align: center;
+      font-size: inherit;
     }
   }
 
