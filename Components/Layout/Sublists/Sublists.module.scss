@@ -11,6 +11,7 @@
     color: inherit;
   }
   &__body {
+    width: max-content;
     display: none;
     @media (min-width: 850px) {
       position: absolute;

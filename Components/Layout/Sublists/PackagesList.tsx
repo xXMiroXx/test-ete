@@ -2,7 +2,7 @@ import SubList from "./SubList";
 import Styles from "./Sublists.module.scss";
 
 const PackagesList: React.FC = () => {
-  const icon = "FaBars" as never;
+  const icon = "FaCoins" as never;
   return (
     <SubList name="خطط ﻵسعار" icon={icon}>
       <ul className={Styles.list}>

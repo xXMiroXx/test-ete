@@ -1,6 +1,7 @@
 @use "@/Styles/themes/themes" as *;
 .header {
-  position: relative;
+  position: fixed;
+  width: 100%;
   display: flex;
   align-items: center;
   // min-height: 6rem;
