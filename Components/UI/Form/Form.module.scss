@@ -24,29 +24,21 @@
   width: 100%;
   border-bottom: 1px solid $grey;
   &__field {
-    display: grid;
-    grid-auto-columns: auto;
-    grid-auto-flow: column;
-    align-items: center;
     border-bottom: 2px solid transparent;
+    display: flex;
+    align-items: center;
   }
 
   &__input {
-    width: 100%;
     background-color: transparent;
     border: none;
-    display: block;
     font-size: $fs-md;
     outline: none;
-    // height: 7rem;
-    &::placeholder {
-      font-family: $ff-cairo;
-    }
+    font-family: inherit;
   }
 
   &__label {
-    display: flex;
-    margin-inline-end: 2rem;
+    margin-inline-end: $m-sm;
   }
 
   &__clear {
