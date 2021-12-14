@@ -1,5 +1,9 @@
+@use "@/Styles/themes/themes" as *;
 .form {
-  background-color: rgba(transparent, 0.2);
+  background-color: $grey-lighter;
+  // padding: 1px;
+  max-width: 45rem;
+  border-radius: 6rem 2rem;
   &__header {
     text-align: center;
   }

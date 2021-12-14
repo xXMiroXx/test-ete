@@ -38,13 +38,14 @@
     width: 100%;
     background-color: transparent;
     border: none;
-    font-size: $fs-md;
+    font-size: inherit;
     outline: none;
     font-family: inherit;
   }
 
   &__label {
     margin-inline-end: $m-sm;
+    font-size: inherit;
   }
 
   &__clear {
@@ -59,8 +60,8 @@
   }
 
   &__note {
-    min-height: 2.5rem;
-    font-size: $fs-sm;
+    min-height: 4.5rem;
+    font-size: inherit;
   }
 
   &--valid.input {

@@ -1,10 +1,11 @@
 @use "@/Styles/themes/themes" as *;
 .header {
   position: fixed;
+  z-index: 100;
   width: 100%;
   display: flex;
   align-items: center;
-  // min-height: 6rem;
+
   background-color: $grey;
   color: $grey-lighter;
   padding: $p-sm $p-md;

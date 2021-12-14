@@ -5,7 +5,7 @@ import EmailInput from "../UI/Form/Inputs/EmailInput";
 
 import PasswordInput from "../UI/Form/Inputs/PasswordInput";
 import Styles from "./LoginForm.module.scss";
-import useForm from "../UI/Form/hooks/use-form";
+import useForm from "../../hooks/use-form";
 import Form from "../UI/Form/Form";
 // export default class LoginForm extends Form {
 //   state = {

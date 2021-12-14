@@ -1,5 +1,5 @@
 import { Reducer, useReducer } from "react";
-import { FormState, FormAction } from "../type";
+import { FormState, FormAction } from "../Components/UI/Form/type";
 
 const reducer: Reducer<FormState, FormAction> = (state, action) => {
   const stateCopy = { ...state };

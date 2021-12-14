@@ -5,7 +5,10 @@ import { NavListProps } from "@/Components/Layout/type";
 const NotFound: NextPage<{ navList: NavListProps }> = (props) => {
   return (
     <Layout navList={props.navList}>
-      <h1>هذا الرابط غير متاح الان ربما يكون متاح لاحقاً</h1>;
+      <h1 style={{ paddingTop: "10rem" }}>
+        هذا الرابط غير متاح الان ربما يكون متاح لاحقاً
+      </h1>
+      ;
     </Layout>
   );
 };

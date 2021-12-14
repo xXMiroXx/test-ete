@@ -3,7 +3,7 @@ import SubList from "./SubList";
 import Styles from "./Sublists.module.scss";
 
 const ServicesList: React.FC = () => {
-  const icon = "FaRegBookmark" as never;
+  const icon = "FaBookmark" as never;
   return (
     <SubList name="الخدمات" icon={icon as never}>
       <ul className={Styles.list}>

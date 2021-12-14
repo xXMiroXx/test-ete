@@ -13,6 +13,11 @@
   }
 }
 
+.heading {
+  color: $primary-light;
+  margin-bottom: $m-lg;
+}
+
 .btn {
   transition: all 0.2s;
   font-family: $ff-cairo;

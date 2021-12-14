@@ -2,17 +2,42 @@
 .hero {
   background-image: linear-gradient(
       to right bottom,
-      rgba($white, 0.9),
+      rgba($grey-dark, 0.6),
       rgba($primary, 0.4)
     ),
     url(/images/hero/hero-bg.webp);
   background-size: cover;
-  background-position: top;
-
-  padding: $p-md;
+  background-position: bottom;
+  padding: $p-ms $p-md $p-md;
+  color: $grey-lighter;
   &__header {
+    grid-column: span 2;
     font-size: $fs-xl;
     text-align: center;
     margin-bottom: $m-lg;
+  }
+  &__main {
+    width: 90%;
+    margin: auto;
+    background-image: linear-gradient(
+        to right,
+        rgba($grey-dark, 0.6),
+        rgba($grey, 1)
+      ),
+      url(/images/hero/search-bg.webp);
+    border-radius: $r-lg;
+    background-position: center;
+    background-size: cover;
+  }
+  &__search {
+    padding: $p-md;
+  }
+}
+.search {
+  &__heading {
+    margin-bottom: $m-lg;
+  }
+  &__sub-heading {
+    // margin-bottom: $;
   }
 }
