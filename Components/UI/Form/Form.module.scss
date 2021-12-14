@@ -24,6 +24,7 @@
 .input {
   padding: $p-md;
   width: 100%;
+  color: $grey;
   &:not(:last-child) {
     border-bottom: 1px solid $grey;
   }

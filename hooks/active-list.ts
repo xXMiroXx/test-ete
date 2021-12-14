@@ -6,7 +6,6 @@ const useList = (bodyRef: React.RefObject<HTMLElement>) => {
   const clickAwayHandler = useCallback(
     (e: MouseEvent) => {
       if (bodyRef.current) {
-        console.log(bodyRef.current.contains(e.target as any));
         if (!bodyRef.current.contains(e.target as HTMLElement))
           setActive(false);
       }
