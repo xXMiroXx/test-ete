@@ -13,9 +13,6 @@ import { BasicInputProps } from "../type";
 
 const PasswordInput: React.FC<BasicInputProps> = (props) => {
   const [focused, setFocused] = useState(false);
-  const focuseHandler = (state: boolean) => {
-    return () => setFocused(state);
-  };
 
   const validator = (input: string) => {
     if (input.length < 8)
@@ -28,21 +25,25 @@ const PasswordInput: React.FC<BasicInputProps> = (props) => {
       <InputField>
         <InputLabel icon="BsKey" id="password" />
         <Input
-          value={props.value}
+          atrr={{
+            value: props.value,
+            id: "password",
+            onFocus: () => setFocused(true),
+            onBlur: () => setFocused(false),
+            type: "password",
+            placeholder: "كلمة السر",
+          }}
           handler={props.handler}
-          id="password"
-          focuseHandler={focuseHandler}
-          placeHolder="كلمة السر"
-          type="password"
           validator={validator}
         />
-        {props.value && (
-          <ClearInput
-            handler={() => {
-              props.handler("", false, "");
-            }}
-          />
-        )}
+
+        <ClearInput
+          handler={() => {
+            props.handler("", false, "");
+          }}
+          input={props.value}
+        />
+
         <InputFlag state={props.state} />
       </InputField>
       <InputNote note={(focused && props.note) || ""} />

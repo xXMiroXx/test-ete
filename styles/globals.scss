@@ -5,6 +5,7 @@
 @use "./themes/mixins";
 
 .item {
+  width: max-content;
   display: flex;
   align-items: center;
   svg {

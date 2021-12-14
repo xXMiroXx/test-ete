@@ -47,9 +47,12 @@
   &__clear {
     background-color: transparent;
     border: none;
-    color: lighten($grey-light, 20%);
+    color: transparent;
     font-size: inherit;
     margin: 0 $m-md;
+    &--show {
+      color: lighten($grey-light, 20%);
+    }
   }
 
   &__note {

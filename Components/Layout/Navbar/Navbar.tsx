@@ -16,7 +16,7 @@ const Navbar: React.FC<{ className?: string }> = ({ className }) => {
 
   return (
     <nav ref={navRef} className={`${Styles.nav} ${className || ""}`}>
-      <button onMouseDown={switchHandler} className={Styles.nav__switch}>
+      <button onClick={switchHandler} className={Styles.nav__switch}>
         {(active && <FaTimes />) || <FaBars />}
       </button>
       <NavList active={active} />

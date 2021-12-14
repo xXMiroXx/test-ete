@@ -6,6 +6,7 @@ const useList = (bodyRef: React.RefObject<HTMLElement>) => {
   const clickAwayHandler = useCallback(
     (e: MouseEvent) => {
       if (bodyRef.current) {
+        console.log(bodyRef.current.contains(e.target as any));
         if (!bodyRef.current.contains(e.target as HTMLElement))
           setActive(false);
       }
@@ -14,8 +15,8 @@ const useList = (bodyRef: React.RefObject<HTMLElement>) => {
   );
 
   useEffect(() => {
-    document.addEventListener("click", clickAwayHandler);
-    return () => document.removeEventListener("click", clickAwayHandler);
+    document.addEventListener("mousedown", clickAwayHandler);
+    return () => document.removeEventListener("mousedown", clickAwayHandler);
   });
   return [active, setActive] as [boolean, typeof setActive];
 };

@@ -32,13 +32,16 @@ export type BaseInputProps = {
 };
 
 export type InputProps = {
-  id: string;
-  type: string;
-  placeHolder: string;
-  value: string;
+  atrr: {
+    id: string;
+    type: string;
+    placeholder: string;
+    value: string;
+    onFocus: FocusEventHandler;
+    onBlur: () => void;
+  };
   handler: (input: string, status: boolean, note: string) => void;
   validator: (input: string) => { status: boolean; note: string };
-  focuseHandler: (state: boolean) => FocusEventHandler;
 };
 
 export type BasicInputProps = {

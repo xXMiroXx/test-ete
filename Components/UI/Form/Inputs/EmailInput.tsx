@@ -31,21 +31,25 @@ const EmailInput: React.FC<BasicInputProps> = (props) => {
       <InputField>
         <InputLabel id="email" icon="BsEnvelope" />
         <Input
-          value={props.value}
+          atrr={{
+            value: props.value,
+            id: "email",
+            onFocus: () => setFocused(true),
+            onBlur: () => setFocused(false),
+            placeholder: "البريد",
+            type: "email",
+          }}
           handler={props.handler}
-          id="email"
-          focuseHandler={focuseHandler}
-          placeHolder="البريد"
-          type="email"
           validator={validator}
         />
-        {props.value && (
-          <ClearInput
-            handler={() => {
-              props.handler("", false, "");
-            }}
-          />
-        )}
+
+        <ClearInput
+          handler={() => {
+            props.handler("", false, "");
+          }}
+          input={props.value}
+        />
+
         <InputFlag state={props.state} />
       </InputField>
       <InputNote note={(focused && props.note) || ""} />

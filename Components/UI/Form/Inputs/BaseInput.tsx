@@ -58,11 +58,12 @@ export const InputFlag: React.FC<{ state: boolean }> = ({ state }) => {
   );
 };
 
-export const ClearInput: React.FC<{ handler: MouseEventHandler }> = ({
+export const ClearInput: React.FC<{ handler: MouseEventHandler ,input:string}> = ({
   handler,
+  input,
 }) => {
   return (
-    <button className={Styles.input__clear} type="button" onClick={handler}>
+    <button  className={`${Styles.input__clear} ${input&&Styles["input__clear--show"]}`} type="button" onClick={handler}>
       <Icons.BsXLg />
     </button>
   );
@@ -76,14 +77,9 @@ export const Input: React.FC<InputProps> = (props) => {
 
   return (
     <input
-      onFocus={props.focuseHandler(true)}
-      onBlur={props.focuseHandler(false)}
-      className={Styles.input__input}
-      value={props.value}
       onChange={changeHandlerE}
-      type={props.type}
-      placeholder={props.placeHolder}
-      id={props.id}
+      className={Styles.input__input}
+      {...props.atrr}
     />
   );
 };

@@ -1,0 +1,18 @@
+@import "@/Styles/themes/themes";
+.hero {
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($white, 0.9),
+      rgba($primary, 0.4)
+    ),
+    url(/images/hero/hero-bg.webp);
+  background-size: cover;
+  background-position: top;
+
+  padding: $p-md;
+  &__header {
+    font-size: $fs-xl;
+    text-align: center;
+    margin-bottom: $m-lg;
+  }
+}

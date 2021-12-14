@@ -10,7 +10,6 @@
     transform: translateY(-200%);
     visibility: hidden;
     background-color: $grey;
-    width: 80%;
     &--active {
       visibility: visible;
       transform: translateY(0);
@@ -26,12 +25,7 @@
   }
 
   &__switch {
-    svg {
-      display: block;
-    }
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    display: flex;
     border: none;
     background: transparent;
     color: $primary;
@@ -41,7 +35,7 @@
     &__list {
       display: flex;
       position: unset;
-      margin-inline-start: $m-lg;
+
       visibility: visible;
       transform: translateY(0);
     }

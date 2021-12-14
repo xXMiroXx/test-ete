@@ -1,6 +1,8 @@
 @use "@/Styles/themes/colors" as *;
 .header {
   position: relative;
+  display: flex;
+  align-items: center;
   min-height: 6rem;
   background-color: $grey;
   color: $grey-lighter;

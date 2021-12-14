@@ -9,18 +9,14 @@ const SearchForm: React.FC = () => {
   const searchField = getInputField("search");
   return (
     <form className={Styles.form}>
-      <header className={Styles.form__header}>
-        <h3>ابحث عن اسم لشرتك</h3>
-      </header>
-      <main>
-        <SearchInput
-          handler={inputHandler("search")}
-          note={searchField?.note || ""}
-          state={searchField?.status || false}
-          value={searchField?.value || ""}
-        />
-      </main>
-      <footer></footer>
+      <h3 className={Styles.form__header}>ابحث عن اسم لشرتك</h3>
+
+      <SearchInput
+        handler={inputHandler("search")}
+        note={searchField?.note || ""}
+        state={searchField?.status || false}
+        value={searchField?.value || ""}
+      />
     </form>
   );
 };
