@@ -38,11 +38,9 @@
     display: block;
     font-size: $fs-md;
     outline: none;
-    height: 5rem;
+    // height: 7rem;
     &::placeholder {
-      line-height: 1.7;
-      font-family: $ff-kufi;
-      font-size: inherit;
+      font-family: $ff-cairo;
     }
   }
 
