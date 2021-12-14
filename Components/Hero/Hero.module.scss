@@ -19,12 +19,18 @@
   &__main {
     width: 90%;
     margin: auto;
+    background-image: -webkit-linear-gradient(
+        to right,
+        rgba($grey-dark, 0.6),
+        rgba($grey, 1)
+      ),
+      url("/images/hero/search-bg.webp");
     background-image: linear-gradient(
         to right,
         rgba($grey-dark, 0.6),
         rgba($grey, 1)
       ),
-      url(/images/hero/search-bg.webp);
+      url("/images/hero/search-bg.webp");
     border-radius: $r-lg;
     background-position: center;
     background-size: cover;
