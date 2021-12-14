@@ -24,13 +24,14 @@
   width: 100%;
   border-bottom: 1px solid $grey;
   &__field {
-    display: flex;
+    display: grid;
+    grid-auto-columns: auto;
+    grid-template-columns: 1fr 3fr 1fr 1fr;
     align-items: center;
     border-bottom: 2px solid transparent;
   }
 
   &__input {
-    padding: $p-md 0;
     width: 100%;
     background-color: transparent;
     border: none;
