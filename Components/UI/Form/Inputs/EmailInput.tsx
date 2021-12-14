@@ -9,7 +9,7 @@ import {
   InputWraper,
 } from "./BaseInput";
 
-import { BasicInputProps, EmailInputProps } from "../type";
+import { BasicInputProps } from "../type";
 
 const EmailInput: React.FC<BasicInputProps> = (props) => {
   const [focused, setFocused] = useState(false);
@@ -39,11 +39,13 @@ const EmailInput: React.FC<BasicInputProps> = (props) => {
           type="email"
           validator={validator}
         />
-        <ClearInput
-          handler={() => {
-            props.handler("", false, "");
-          }}
-        />
+        {props.value && (
+          <ClearInput
+            handler={() => {
+              props.handler("", false, "");
+            }}
+          />
+        )}
         <InputFlag state={props.state} />
       </InputField>
       <InputNote note={(focused && props.note) || ""} />

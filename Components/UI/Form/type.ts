@@ -19,9 +19,9 @@ export type FormAction = {
 export type FormProps = {
   name: string;
   submitBtn: string;
-  secondaryBtn: string;
+  secondaryBtn?: string;
   submitHandler: FormEventHandler;
-  secondaryBtnHandler: Function;
+  secondaryBtnHandler?: Function;
 };
 
 export type BaseInputProps = {

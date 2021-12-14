@@ -15,12 +15,14 @@ const Form: React.FC<FormProps> = (props) => {
         >
           {props.submitBtn}
         </button>
-        <button
-          className={`${Styles["form__secondary-btn"]} btn btn-secondary`}
-          type="button"
-        >
-          {props.secondaryBtn}
-        </button>
+        {props.secondaryBtn && (
+          <button
+            className={`${Styles["form__secondary-btn"]} btn btn-secondary`}
+            type="button"
+          >
+            {props.secondaryBtn}
+          </button>
+        )}
       </footer>
     </form>
   );

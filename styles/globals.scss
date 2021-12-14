@@ -25,11 +25,11 @@
   border: none;
   background-color: transparent;
   padding: 0.2rem 1.5rem;
+  border-radius: $r-lg;
   &-primary {
     box-shadow: 3px 4px 9px rgba(#000, 0.2);
     background-color: $primary;
     color: $grey-lighter;
-    border-radius: $r-md;
     &:hover {
       background-color: lighten($primary, 5%);
       box-shadow: 1px 2px 4px rgba(#000, 0.3);
@@ -43,7 +43,6 @@
     background-color: $white;
     box-shadow: 3px 4px 9px rgba(#000, 0.2);
     color: $grey-dark;
-    border-radius: $r-md;
     &:hover {
       background-color: darken($white, 5%);
       box-shadow: 1px 2px 4px rgba(#000, 0.3);

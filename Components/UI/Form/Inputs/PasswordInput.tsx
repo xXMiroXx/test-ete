@@ -36,11 +36,13 @@ const PasswordInput: React.FC<BasicInputProps> = (props) => {
           type="password"
           validator={validator}
         />
-        <ClearInput
-          handler={() => {
-            props.handler("", false, "");
-          }}
-        />
+        {props.value && (
+          <ClearInput
+            handler={() => {
+              props.handler("", false, "");
+            }}
+          />
+        )}
         <InputFlag state={props.state} />
       </InputField>
       <InputNote note={(focused && props.note) || ""} />

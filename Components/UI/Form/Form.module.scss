@@ -5,7 +5,7 @@
   padding: $p-md;
   width: 90%;
   margin: auto;
-  border-radius: $r-ms;
+  border-radius: $r-lg;
   background-color: $grey-lighter;
   &__header {
     text-align: center;
@@ -20,9 +20,11 @@
 
 // Inputs
 .input {
-  padding: 0 $p-md;
+  padding: $p-md;
   width: 100%;
-  border-bottom: 1px solid $grey;
+  &:not(:last-child) {
+    border-bottom: 1px solid $grey;
+  }
   &__field {
     border-bottom: 2px solid transparent;
     display: flex;
@@ -51,9 +53,8 @@
   }
 
   &__note {
-    min-height: 3rem;
+    min-height: 2.5rem;
     font-size: $fs-sm;
-    // border-bottom: 2px solid grey;
   }
 
   &--valid.input {
