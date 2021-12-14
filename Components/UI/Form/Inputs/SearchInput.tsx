@@ -31,6 +31,7 @@ const SearchInput: React.FC<BasicInputProps> = (props) => {
         />
         {props.value && (
           <ClearInput
+            input={props.value}
             handler={() => {
               props.handler("", false, "");
             }}
