@@ -66,7 +66,7 @@ const LoginForm: React.FC = () => {
   const handler = () => {};
   return (
     <Form
-      name="سجيل دخول"
+      name="تسجيل دخول"
       submitBtn="دخول"
       secondaryBtn="حساب جديد"
       submitHandler={loginHandler}

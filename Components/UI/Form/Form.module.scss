@@ -9,6 +9,8 @@
   background-color: $grey-lighter;
   &__header {
     text-align: center;
+    color: $grey-light;
+    font-weight: $fw-xl;
   }
   &__footer {
     padding: $p-md;
