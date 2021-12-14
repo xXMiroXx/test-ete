@@ -1,13 +1,12 @@
-@use "@/Styles/themes/colors" as *;
+@use "@/Styles/themes/themes" as *;
 .header {
   position: relative;
   display: flex;
   align-items: center;
-  min-height: 6rem;
+  // min-height: 6rem;
   background-color: $grey;
   color: $grey-lighter;
-  &__nav {
-  }
+  padding: $p-sm $p-md;
 
   &__logo {
     position: absolute;
