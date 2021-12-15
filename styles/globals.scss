@@ -1,8 +1,9 @@
-@use "./base/utilities";
-@use "./base/base";
-@use "./themes/colors" as *;
-@use "./themes/measures" as *;
-@use "./themes/mixins";
+@import "./base/utilities";
+@import "./base/base";
+@import "./base/animations";
+@import "./themes/colors";
+@import "./themes/measures";
+@import "./themes/mixins";
 
 .item {
   width: max-content;
@@ -58,4 +59,15 @@
       box-shadow: inset 1px 1px 4px 2px rgba(#000, 0.1);
     }
   }
+}
+
+// Spinner
+.loader {
+  border: 0.3em solid $grey-lighter; /* Light grey */
+  border-top: 0.3em solid $grey-dark; /* Blue */
+  border-radius: 50%;
+  width: 2em;
+  height: 2em;
+  margin: auto;
+  animation: spin 2s linear infinite;
 }

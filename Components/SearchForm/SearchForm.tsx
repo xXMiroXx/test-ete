@@ -1,19 +1,38 @@
 import useForm from "../../hooks/use-form";
 import SearchInput from "../UI/Form/Inputs/SearchInput";
 import Styles from "./SearchForm.module.scss";
-import { FormEvent } from "react";
+import { FormEvent, useState } from "react";
 
 const SearchForm: React.FC = () => {
-  const [state, inputHandler, getInputField] = useForm([
+  const [_state, inputHandler, getInputField] = useForm([
     { id: "search", note: "", status: false, value: "" },
   ]);
   const searchField = getInputField("search");
-  const submitHandler = (e: FormEvent) => {
+
+  // True if company is available!
+  const [state, setState] = useState(false);
+  const [isLoading, setLoading] = useState(false);
+  const [resolved, setResolved] = useState(false);
+  const submitHandler = async (e: FormEvent) => {
     e.preventDefault();
     if (!searchField?.status) return;
+    setResolved(false);
+    setLoading(true);
+    try {
+      const response = await fetch(
+        "/api/search/companies-house?name=" + searchField.value
+      );
+      const data = await response.json();
+      setState(data.available);
+    } catch (e) {
+      setState(false);
+    }
+    setLoading(false);
+    setResolved(true);
   };
   return (
     <form
+      onChange={() => setResolved(false)}
       onSubmit={submitHandler}
       className={`${Styles.form} ${
         Styles[("form-" + searchField?.status && "valid") || "invalid"]
@@ -31,11 +50,27 @@ const SearchForm: React.FC = () => {
 
       <button
         disabled={!searchField?.status}
-        className={`btn btn-primary ${Styles.form__btn}`}
+        className={`btn btn-secondary ${Styles.form__btn}`}
         type="submit"
       >
         ابحث
       </button>
+      <button className={`btn btn-primary`} type="button">
+        سجل شركتك
+      </button>
+      <div className={Styles.form__resolve}>
+        {isLoading && <div className="loader"></div>}
+        {resolved && (
+          <div
+            className={
+              (state && Styles["form__resolve--valid"]) ||
+              Styles["form__resolve--invalid"]
+            }
+          >
+            {state ? "متاح" : "مسجل بالفعل"}
+          </div>
+        )}
+      </div>
     </form>
   );
 };

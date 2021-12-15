@@ -5,9 +5,22 @@
     border-radius: 6rem 2rem;
     margin-bottom: $m-md;
   }
+  &__btn {
+    margin-inline-end: $m-lg;
+  }
   // padding: 1px;
   max-width: 45rem;
   &__header {
     text-align: center;
+  }
+  &__resolve {
+    float: left;
+    font-size: $fs-md;
+    &--valid {
+      color: $success;
+    }
+    &--invalid {
+      color: $warning;
+    }
   }
 }
