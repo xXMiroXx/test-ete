@@ -17,26 +17,42 @@
     margin-bottom: $m-lg;
   }
   &__main {
-    width: 90%;
-    margin: auto;
-    background-image: -webkit-linear-gradient(
-        to right,
-        rgba($grey-dark, 0.6),
-        rgba($grey, 1)
-      ),
-      url("/images/hero/search-bg.webp");
-    background-image: linear-gradient(
-        to right,
-        rgba($grey-dark, 0.6),
-        rgba($grey, 1)
-      ),
-      url("/images/hero/search-bg.webp");
-    border-radius: $r-lg;
+    //   width: 90%;
+    //   margin: auto;
+
+    //   background-image: linear-gradient(
+    //       to right,
+    //       rgba($grey-dark, 0.6),
+    //       rgba($grey, 1)
+    //     ),
+    //     url("/images/hero/search-bg.webp");
+    //   border-radius: $r-lg;
+    //   background-position: center;
+    //   background-size: cover;
+    // }
+
+    background: url("/images/hero/search-bg.webp");
+    position: relative;
     background-position: center;
     background-size: cover;
+    &::before {
+      content: "";
+      z-index: 0;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background-image: linear-gradient(
+        to right,
+        rgba($grey-dark, 0.6),
+        rgba($grey, 1)
+      );
+    }
   }
   &__search {
     padding: $p-md;
+    position: relative;
   }
 }
 .search {
