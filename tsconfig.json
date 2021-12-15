@@ -7,6 +7,12 @@
       ],
       "@/Styles/*": [
         "styles/*"
+      ],
+      "@/helper/*": [
+        "helper/*"
+      ],
+      "@/hooks/*": [
+        "hooks/*"
       ]
     },
     "target": "es5",

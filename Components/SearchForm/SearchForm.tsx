@@ -2,6 +2,7 @@ import useForm from "../../hooks/use-form";
 import SearchInput from "../UI/Form/Inputs/SearchInput";
 import Styles from "./SearchForm.module.scss";
 import { FormEvent, useState } from "react";
+import Popup from "../UI/Popup/Popup";
 
 const SearchForm: React.FC = () => {
   const [_state, inputHandler, getInputField] = useForm([
@@ -13,6 +14,7 @@ const SearchForm: React.FC = () => {
   const [state, setState] = useState(false);
   const [isLoading, setLoading] = useState(false);
   const [resolved, setResolved] = useState(false);
+  const [isPopup, setPopup] = useState(false);
   const submitHandler = async (e: FormEvent) => {
     e.preventDefault();
     if (!searchField?.status) return;
@@ -38,39 +40,56 @@ const SearchForm: React.FC = () => {
         Styles[("form-" + searchField?.status && "valid") || "invalid"]
       }`}
     >
-      {/* <h3 className={Styles.form__header}></h3> */}
       <div className={Styles.form__body}>
         <SearchInput
           handler={inputHandler("search")}
           note={searchField?.note || ""}
           state={searchField?.status || false}
           value={searchField?.value || ""}
+          isLoading={isLoading}
         />
+      </div>
+
+      <div
+        className={`${Styles.form__resolve}
+                    ${resolved && Styles["form__resolve--active" || ""]}
+                    ${(state && Styles["form__resolve--valid"]) || ""}`}
+      >
+        {state ? "متاح" : "غير متاح"}
       </div>
 
       <button
         disabled={!searchField?.status}
-        className={`btn btn-secondary ${Styles.form__btn}`}
+        className={`btn  ${Styles["form__search-btn"]} 
+                         ${
+                           (!searchField?.status &&
+                             Styles["form__search-btn--invalid"]) ||
+                           ""
+                         }`}
         type="submit"
       >
         ابحث
       </button>
-      <button className={`btn btn-primary`} type="button">
+
+      <button
+        onClick={() => setPopup(true)}
+        type="button"
+        className={`${Styles["form__register-btn"]} btn btn-primary`}
+      >
         سجل شركتك
       </button>
-      <div className={Styles.form__resolve}>
-        {isLoading && <div className="loader"></div>}
-        {resolved && (
-          <div
-            className={
-              (state && Styles["form__resolve--valid"]) ||
-              Styles["form__resolve--invalid"]
-            }
-          >
-            {state ? "متاح" : "مسجل بالفعل"}
-          </div>
-        )}
-      </div>
+      {isPopup && (
+        <Popup
+          heading="سجل شركتك"
+          closeHandler={() => {
+            setPopup(false);
+          }}
+        >
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima, iste
+          dolores officiis nihil cum ratione commodi tempora doloribus delectus
+          dolore soluta corporis nisi adipisci ex a ut et ipsa accusamus.
+        </Popup>
+      )}
     </form>
   );
 };

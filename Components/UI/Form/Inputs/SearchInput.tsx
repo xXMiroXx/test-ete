@@ -29,13 +29,16 @@ const SearchInput: React.FC<BasicInputProps> = (props) => {
           handler={props.handler}
           validator={searchValidator}
         />
-
-        <ClearInput
-          input={props.value}
-          handler={() => {
-            props.handler("", false, "");
-          }}
-        />
+        <div>
+          <ClearInput
+            input={props.value}
+            handler={() => {
+              props.handler("", false, "");
+            }}
+          >
+            {(props.isLoading && <div className="loader"></div>) || null}
+          </ClearInput>
+        </div>
       </InputField>
       <InputNote note={(focused && props.note) || ""} />
     </InputWraper>

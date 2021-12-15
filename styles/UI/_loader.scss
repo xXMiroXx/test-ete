@@ -1,0 +1,10 @@
+@use "../base/animations" as *;
+.loader {
+  border: 0.2em solid $grey-lighter; /* Light grey */
+  border-top: 0.2em solid $grey-dark; /* Blue */
+  border-radius: 50%;
+  width: 1em;
+  height: 1em;
+  margin: auto;
+  animation: spin 2s linear infinite;
+}

@@ -17,6 +17,7 @@ class MyDocument extends Document {
       <Html dir="rtl" lang="ar">
         <Head />
         <body>
+          <div id="popup" />
           <Main />
           <NextScript />
         </body>

@@ -49,13 +49,9 @@
   }
 
   &__clear {
-    background-color: transparent;
-    border: none;
-    color: transparent;
-    font-size: inherit;
-    margin: 0 $m-md;
-    &--show {
-      color: lighten($grey-light, 20%);
+    button {
+      border: none;
+      background-color: transparent;
     }
   }
 

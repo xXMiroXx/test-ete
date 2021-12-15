@@ -5,7 +5,7 @@ import React, {
   MouseEventHandler,
 } from "react";
 
-import { BaseInputProps, InputProps } from "../type";
+import { BaseInputProps, ClearInputProps, InputProps } from "../type";
 import Styles from "../Form.module.scss";
 import Icons from "react-icons/bs/index";
 import { IconType } from "react-icons/lib";
@@ -58,14 +58,27 @@ export const InputFlag: React.FC<{ state: boolean }> = ({ state }) => {
   );
 };
 
-export const ClearInput: React.FC<{ handler: MouseEventHandler ,input:string}> = ({
+export const ClearInput: React.FC<ClearInputProps> = ({
   handler,
   input,
+  children,
 }) => {
   return (
-    <button  className={`${Styles.input__clear} ${input&&Styles["input__clear--show"]}`} type="button" onClick={handler}>
-      <Icons.BsXLg />
-    </button>
+    <div
+      className={`${Styles.input__clear} ${
+        input && Styles["input__clear--show"]
+      }`}
+    >
+      <div>
+        {children ||
+          (input && (
+            <button type="button" onClick={handler}>
+              <Icons.BsXLg />
+            </button>
+          )) ||
+          null}
+      </div>
+    </div>
   );
 };
 

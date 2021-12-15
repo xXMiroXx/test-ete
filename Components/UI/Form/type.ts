@@ -3,6 +3,7 @@ import {
   FocusEventHandler,
   FormEventHandler,
   HTMLInputTypeAttribute,
+  MouseEventHandler,
 } from "react";
 import { IconType } from "react-icons";
 
@@ -48,6 +49,7 @@ export type BasicInputProps = {
   state: boolean;
   value: string;
   note: string;
+  isLoading?: boolean;
   handler: (value: string, state: boolean, note: string) => void;
 };
 
@@ -63,4 +65,9 @@ export type PasswordInputProps = {
   value: string;
   note: string;
   handler: (value: string, state: boolean, note: string) => void;
+};
+
+export type ClearInputProps = {
+  handler: MouseEventHandler;
+  input: string;
 };

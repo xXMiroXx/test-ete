@@ -3,24 +3,36 @@
   &__body {
     background-color: $grey-lighter;
     border-radius: 6rem 2rem;
-    margin-bottom: $m-md;
+    // margin-bottom: $m-md;
   }
-  &__btn {
-    margin-inline-end: $m-lg;
-  }
+
   // padding: 1px;
   max-width: 45rem;
   &__header {
     text-align: center;
   }
+
   &__resolve {
-    float: left;
-    font-size: $fs-md;
+    margin: $m-sm;
+    text-align: center;
+    opacity: 0;
+    color: $warning;
     &--valid {
       color: $success;
     }
-    &--invalid {
-      color: $warning;
+    &--active {
+      opacity: 1;
     }
+  }
+  &__search-btn {
+    background-color: $white;
+    color: $black;
+
+    &--invalid {
+      opacity: 0.1;
+    }
+  }
+  &__register-btn {
+    float: left;
   }
 }

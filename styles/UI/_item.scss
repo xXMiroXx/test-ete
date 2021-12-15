@@ -1,0 +1,9 @@
+@import "../themes/themes.scss";
+.item {
+  width: max-content;
+  display: flex;
+  align-items: center;
+  svg {
+    margin-inline-end: $m-sm;
+  }
+}
