@@ -9,12 +9,16 @@
     background-color: transparent;
     border: none;
     color: inherit;
+    &:hover {
+      color: $white;
+    }
   }
   &__body {
-    width: max-content;
+    // width: 100vw;
     display: none;
     @media (min-width: 850px) {
       position: absolute;
+      width: max-content;
       background-color: $grey;
       padding: $p-md;
       border-radius: $r-md;

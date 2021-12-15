@@ -1,9 +1,12 @@
 @use "@/Styles/themes/themes" as *;
 .form {
-  background-color: $grey-lighter;
+  &__body {
+    background-color: $grey-lighter;
+    border-radius: 6rem 2rem;
+    margin-bottom: $m-md;
+  }
   // padding: 1px;
   max-width: 45rem;
-  border-radius: 6rem 2rem;
   &__header {
     text-align: center;
   }

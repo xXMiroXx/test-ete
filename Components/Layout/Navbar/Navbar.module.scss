@@ -18,9 +18,15 @@
 
   &__item {
     margin: 0 $m-md;
+    &:hover {
+      color: lighten($grey-lighter, 15%);
+    }
     &--active {
       color: $primary-light;
       border-bottom: 2px solid $primary;
+      &:hover {
+        color: $primary-light;
+      }
     }
   }
 
