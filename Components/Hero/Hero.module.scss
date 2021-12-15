@@ -6,9 +6,9 @@
       rgba($grey-dark, 0.6),
       rgba($primary, 0.4)
     ),
-    url(/images/hero/hero-bg.webp);
+    url(/images/hero/company.jpg);
   background-size: cover;
-  background-position: bottom;
+  background-position: center;
   padding: $p-ms $p-md $p-md;
   color: $grey-lighter;
   &__header {
@@ -26,31 +26,12 @@
         rgba($grey-dark, 0.6),
         rgba($grey, 1)
       ),
-      url("/images/hero/iphone.jpg");
+      url("/images/hero/search.jpg");
     border-radius: $r-lg;
     background-position: center;
     background-size: cover;
   }
 
-  // background: url("/images/hero/search-bg.webp");
-  // position: relative;
-  // background-position: center;
-  // background-size: cover;
-  // &::before {
-  //   content: "";
-
-  //   top: 0;
-  //   left: 0;
-  //   width: 100%;
-  //   height: 100%;
-  //   position: absolute;
-  //   background-image: linear-gradient(
-  //     to right,
-  //     rgba($grey-dark, 0.6),
-  //     rgba($grey, 1)
-  //   );
-  // }
-  // }
   &__search {
     padding: $p-md;
     position: relative;
@@ -59,8 +40,5 @@
 .search {
   &__heading {
     margin-bottom: $m-lg;
-  }
-  &__sub-heading {
-    // margin-bottom: $;
   }
 }
