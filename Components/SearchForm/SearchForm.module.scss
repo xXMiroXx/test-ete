@@ -36,3 +36,25 @@
     float: left;
   }
 }
+
+.register {
+  &__heading {
+    margin-bottom: $m-md;
+    text-align: center;
+  }
+  &__contact-btns {
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+  }
+  &__contact-text {
+    margin-bottom: $m-md;
+  }
+  .whatsapp-btn {
+    svg {
+      color: $success;
+    }
+  }
+}

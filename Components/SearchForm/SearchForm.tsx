@@ -3,6 +3,7 @@ import SearchInput from "../UI/Form/Inputs/SearchInput";
 import Styles from "./SearchForm.module.scss";
 import { FormEvent, useState } from "react";
 import Popup from "../UI/Popup/Popup";
+import Register from "./Register";
 
 const SearchForm: React.FC = () => {
   const [_state, inputHandler, getInputField] = useForm([
@@ -85,9 +86,7 @@ const SearchForm: React.FC = () => {
             setPopup(false);
           }}
         >
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima, iste
-          dolores officiis nihil cum ratione commodi tempora doloribus delectus
-          dolore soluta corporis nisi adipisci ex a ut et ipsa accusamus.
+          <Register />
         </Popup>
       )}
     </form>
