@@ -1,0 +1,29 @@
+@import "@/Styles/themes/themes";
+.collapse {
+  width: 100%;
+  position: relative;
+  border-radius: $r-lg;
+  overflow: hidden;
+
+  &__btn {
+    display: block;
+    border: none;
+    font-size: inherit;
+    color: inherit;
+    font-family: inherit;
+    font-weight: 700;
+    width: 100%;
+  }
+  &__content {
+    width: 100%;
+    overflow: hidden;
+    transition: all 1s;
+    // position: absolute;
+    z-index: 1;
+    max-height: 0px;
+
+    &--active {
+      max-height: 100px;
+    }
+  }
+}

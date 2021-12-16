@@ -6,3 +6,15 @@ export type NavItemProps = {
   icon: keyof IconType;
 };
 export type NavListProps = NavItemProps[];
+
+export type ContactProps = {
+  id: string;
+  name: string;
+  address: string;
+  workingTime: string;
+  phoneNumber: string[];
+  whatsapp: string;
+  email: string;
+};
+
+export type ContactsProps = ContactProps[];

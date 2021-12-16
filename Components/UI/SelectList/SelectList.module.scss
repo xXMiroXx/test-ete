@@ -1,0 +1,15 @@
+@import "@/Styles/themes/themes";
+.select {
+  color: $grey-lighter;
+  width: 15rem;
+  text-align: center;
+
+  &__head {
+    background-color: $grey-dark;
+  }
+  &__list {
+    background-color: $grey;
+  }
+  &__item {
+  }
+}

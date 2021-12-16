@@ -1,0 +1,29 @@
+[
+  {
+    "id": "EG",
+    "name": "مصر",
+    "address": "3 El Fatemyein St., Off Omar Ibn El Khattab St., Ismaileya Square, Heliopolis, Cairo",
+    "workingTime": "Sat - Th : 9:00 am to 5:00 pm",
+    "phoneNumbers": ["+2226336767", "+21221555525"],
+    "whatsapp": "+19255674446",
+    "email": "info@eteform.com"
+  },
+  {
+    "id": "UK",
+    "name": "بريطانيا",
+    "address": "13 Freeland Park Wareham Road, Poole, Dorset, BH16 6FA, UK",
+    "workingTime": "Sat - Th : 9:00 am to 5:00 pm",
+    "phoneNumbers": ["+447451289865"],
+    "whatsapp": "+19255674446",
+    "email": "info@eteform.com"
+  },
+  {
+    "id": "US",
+    "name": "أمريكا",
+    "address": "473 Mundet Place, Hillside, New Jersey. (Zip code: 07205)",
+    "workingTime": "Sat - Th : 9:00 am to 5:00 pm",
+    "phoneNumbers": ["+19255674446"],
+    "whatsapp": "+19255674446",
+    "email": "info@eteform.com"
+  }
+]

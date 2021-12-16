@@ -2,12 +2,15 @@ import type { GetStaticProps, NextPage } from "next";
 
 import Layout from "@/Components/Layout/Layout";
 import getNav from "helper/getNav";
-import { NavListProps } from "@/Components/Layout/type";
+import { ContactsProps, NavListProps } from "@/Components/Layout/type";
 import Hero from "@/Components/Hero/Hero";
+import fetchData from "@/helper/fetchData";
 
-const Home: NextPage<{ navList: NavListProps }> = (props) => {
+const Home: NextPage<{ navList: NavListProps; contacts: ContactsProps }> = (
+  props
+) => {
   return (
-    <Layout navList={props.navList}>
+    <Layout navList={props.navList} contacts={props.contacts}>
       <Hero />
     </Layout>
   );
@@ -15,7 +18,9 @@ const Home: NextPage<{ navList: NavListProps }> = (props) => {
 
 export const getStaticProps: GetStaticProps = () => {
   const navList = getNav();
-  return { props: { navList } };
+  const contacts = fetchData("contacts");
+
+  return { props: { navList, contacts } };
 };
 
 export default Home;

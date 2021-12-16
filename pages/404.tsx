@@ -1,10 +1,13 @@
 import { GetStaticProps, NextPage } from "next";
 import Layout from "@/Components/Layout/Layout";
 import getNav from "helper/getNav";
-import { NavListProps } from "@/Components/Layout/type";
-const NotFound: NextPage<{ navList: NavListProps }> = (props) => {
+import { ContactsProps, NavListProps } from "@/Components/Layout/type";
+import fetchData from "@/helper/fetchData";
+const NotFound: NextPage<{ contacts: ContactsProps; navList: NavListProps }> = (
+  props
+) => {
   return (
-    <Layout navList={props.navList}>
+    <Layout navList={props.navList} contacts={props.contacts}>
       <h1 style={{ paddingTop: "10rem" }}>
         هذا الرابط غير متاح الان ربما يكون متاح لاحقاً
       </h1>
@@ -15,7 +18,9 @@ const NotFound: NextPage<{ navList: NavListProps }> = (props) => {
 
 export const getStaticProps: GetStaticProps = () => {
   const navList = getNav();
-  return { props: { navList } };
+  const contacts = fetchData("contacts");
+
+  return { props: { navList, contacts } };
 };
 
 export default NotFound;
