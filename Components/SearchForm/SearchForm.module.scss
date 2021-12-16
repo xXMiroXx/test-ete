@@ -38,6 +38,8 @@
 }
 
 .register {
+  background-color: $grey-lighter;
+  padding: $p-md;
   &__heading {
     margin-bottom: $m-md;
     text-align: center;
@@ -51,6 +53,7 @@
   }
   &__contact-text {
     margin-bottom: $m-md;
+    text-align: right;
   }
   .whatsapp-btn {
     svg {

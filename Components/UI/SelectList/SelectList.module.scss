@@ -3,7 +3,10 @@
   color: $grey-lighter;
   width: 15rem;
   text-align: center;
-
+  &__collapse {
+    border-radius: $r-lg;
+    box-shadow: 3px 6px 10px 1px rgba($black, 0.2);
+  }
   &__head {
     background-color: $grey-dark;
   }

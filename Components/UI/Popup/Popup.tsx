@@ -8,6 +8,12 @@ import Styles from "./Popup.module.scss";
 const Popup: React.FC<{ closeHandler: () => void; heading: string }> = (
   props
 ) => {
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  });
   const modalRef = useRef<HTMLDivElement>(null);
   const handleBackdropclick: MouseEventHandler = (e) => {
     const modal = modalRef.current;
@@ -20,7 +26,7 @@ const Popup: React.FC<{ closeHandler: () => void; heading: string }> = (
   return (
     <Portals domId="popup">
       <div onClick={handleBackdropclick} className={Styles.backdrop}>
-        <div ref={modalRef} className={`${Styles.modal} card`}>
+        <div ref={modalRef} className={`${Styles.modal} `}>
           <header className={Styles.modal__heading}>{props.heading}</header>
           <button onClick={props.closeHandler} className={Styles.modal__btn}>
             <FaTimes />

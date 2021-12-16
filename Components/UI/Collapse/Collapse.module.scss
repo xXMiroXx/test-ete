@@ -1,29 +1,32 @@
 @import "@/Styles/themes/themes";
 .collapse {
   width: 100%;
-  position: relative;
-  border-radius: $r-lg;
   overflow: hidden;
 
   &__btn {
     display: block;
+    position: relative;
     border: none;
     font-size: inherit;
     color: inherit;
     font-family: inherit;
-    font-weight: 700;
+    font-weight: inherit;
     width: 100%;
+    &::before {
+      content: "\25bc";
+      right: 1rem;
+      top: 1px;
+      float: right;
+      margin-inline-start: $m-sm;
+    }
+    &--active::before {
+      content: "\25b2";
+    }
   }
   &__content {
     width: 100%;
     overflow: hidden;
-    transition: all 1s;
-    // position: absolute;
-    z-index: 1;
+    transition: all 0.5s;
     max-height: 0px;
-
-    &--active {
-      max-height: 100px;
-    }
   }
 }

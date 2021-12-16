@@ -14,12 +14,16 @@ const Footer: React.FC<{ contacts: ContactsProps }> = ({ contacts }) => {
   return (
     <footer id="footer" className={Styles.footer}>
       <h2 className={`heading--big`}>نسعد للقائك</h2>
-      <SelectList
-        list={contacts}
-        active={activeContact}
-        activeHandler={activeHandler}
-      />
-      <Contact {...contact} />
+      <div className={Styles.footer__contacts}>
+        <SelectList
+          className={Styles.contacts__select}
+          list={contacts}
+          active={activeContact}
+          activeHandler={activeHandler}
+        />
+        <h3 className="heading">اختر المكان الاقرب اليك</h3>
+        <Contact {...contact} />
+      </div>
     </footer>
   );
 };

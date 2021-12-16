@@ -12,7 +12,7 @@ export type ContactProps = {
   name: string;
   address: string;
   workingTime: string;
-  phoneNumber: string[];
+  phoneNumbers: string[];
   whatsapp: string;
   email: string;
 };

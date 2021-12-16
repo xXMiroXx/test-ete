@@ -1,6 +1,6 @@
 import React, { ReactElement, useState } from "react";
-import FontAwsome from "react-icons/fa/index";
-import { IconType } from "react-icons";
+import { BsCaretDownFill, BsCaretUpFill } from "react-icons/bs";
+import { FaArrowCircleDown, FaArrowDown } from "react-icons/fa/index";
 import Collapse from "../Collapse/Collapse";
 import Styles from "./SelectList.module.scss";
 
@@ -13,10 +13,16 @@ type SelectListProps = {
   list: ListItem[];
   active: string;
   activeHandler: (id: string) => void;
+  className?: string;
 };
 
+//Head of list
 const SelectHead: React.FC<{ item: ListItem }> = ({ item }) => {
-  return <div className={Styles.select__head}>{item.name}</div>;
+  return (
+    <div className={`${Styles.select__head}`}>
+      <span className="btn">{item.name}</span>
+    </div>
+  );
 };
 SelectHead.defaultProps = {
   item: {
@@ -25,6 +31,7 @@ SelectHead.defaultProps = {
   },
 };
 
+//List items
 const SelectItem: React.FC<{ item: ListItem; handler: () => void }> = ({
   item,
   handler,
@@ -38,14 +45,17 @@ const SelectItem: React.FC<{ item: ListItem; handler: () => void }> = ({
   );
 };
 
+//Main List
 const SelectList: React.FC<SelectListProps> = ({
   list,
   active,
   activeHandler,
+  className,
 }) => {
   return (
-    <div className={Styles.select}>
+    <div className={`${Styles.select} ${className || ""}`}>
       <Collapse
+        className={Styles.select__collapse}
         Head={
           <SelectHead
             item={list.find((e) => e.id === active) || ({} as ListItem)}
