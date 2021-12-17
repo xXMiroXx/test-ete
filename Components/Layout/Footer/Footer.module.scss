@@ -35,4 +35,18 @@
       }
     }
   }
+
+  &__social {
+    text-align: center;
+    font-size: $fs-xl;
+    svg {
+      margin: 0 $m-md;
+      color: rgba($primary, 0.8);
+    }
+  }
+  &__copyrights {
+    color: lighten($grey-light, 15%);
+    text-align: center;
+    font-size: 1rem;
+  }
 }

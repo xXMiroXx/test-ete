@@ -1,0 +1,13 @@
+@import "@/Styles/themes/themes";
+.partners {
+  padding: $p-md;
+  &__slider {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    &-img {
+      position: relative;
+      width: 10rem;
+    }
+  }
+}

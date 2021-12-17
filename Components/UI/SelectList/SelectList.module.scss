@@ -5,10 +5,19 @@
   text-align: center;
   &__collapse {
     border-radius: $r-lg;
-    box-shadow: 3px 6px 10px 1px rgba($black, 0.2);
+    overflow: hidden;
+    transition: box-shadow 0.4s;
+    box-shadow: 3px 12px 20px 1px rgba($black, 0.1);
+    &:hover {
+      box-shadow: unset;
+    }
   }
   &__head {
+    transition: background-color 0.4s;
     background-color: $grey-dark;
+    &:hover {
+      background-color: $grey;
+    }
   }
   &__list {
     background-color: $grey;

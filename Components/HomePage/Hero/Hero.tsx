@@ -1,5 +1,5 @@
 import Image from "next/image";
-import SearchForm from "../SearchForm/SearchForm";
+import SearchForm from "../../SearchForm/SearchForm";
 import Styles from "./Hero.module.scss";
 
 const Hero: React.FC = () => {
