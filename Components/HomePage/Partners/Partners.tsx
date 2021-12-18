@@ -42,9 +42,9 @@ const Partners: React.FC = () => {
   useEffect(() => {
     let xPos = 0;
     const animate = () => {
-      xPos += 2;
-      sliderRef.current!.style.transform = `translateX:(${xPos}px)`;
-      if (xPos === 100) xPos = 0;
+      xPos += 0.1;
+      sliderRef.current!.style.transform = `translate3d(${xPos}%, 0, 0)`;
+      if (xPos >= 100) xPos = 0;
       requestAnimationFrame(animate);
     };
     animate();
