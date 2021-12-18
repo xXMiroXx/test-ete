@@ -1,13 +1,6 @@
-import {
-  BsChatDotsFill,
-  BsClockFill,
-  BsEnvelopeFill,
-  BsGeoAltFill,
-  BsTelephoneFill,
-  
-} from "react-icons/bs";
 import { ContactProps } from "../type";
 import Styles from "./Footer.module.scss";
+import Item from "@/Components/UI/Item";
 
 // Phone
 const ContactPhone: React.FC<{ phone: string[] }> = ({ phone }) => {
@@ -25,50 +18,29 @@ const ContactPhone: React.FC<{ phone: string[] }> = ({ phone }) => {
 const Contact: React.FC<ContactProps> = (props) => {
   return (
     <div dir="ltr" className={`${Styles.contacts__contact}  card`}>
-      <div className={`item ${Styles.contact__address}`}>
-        <span>
-          <BsGeoAltFill />
-        </span>
-        <span>{props.address}</span>
-      </div>
-      <div className={`item ${Styles.contact__times}`}>
-        <span>
-          <BsClockFill />
-        </span>
-        <span>{props.workingTime}</span>
-      </div>
-      <div className={`item ${Styles.contact__phone}`}>
-        <span>
-          <BsTelephoneFill />
-        </span>
-        <span>
-          <ContactPhone phone={props.phoneNumbers} />
-        </span>
-      </div>
-      <div className={`item ${Styles.contact__whatsapp}`}>
-        <span>
-          <BsChatDotsFill />
-        </span>
-        <span>
-          <a
-            target="_blank"
-            href={`https://wa.me/${props.whatsapp}`}
-            rel="noreferrer"
-          >
-            {props.whatsapp}
-          </a>
-        </span>
-      </div>
-      <div className={`item ${Styles.contact__email}`}>
-        <span>
-          <BsEnvelopeFill />
-        </span>
-        <span>
-          <a target={"_blank"} href={`mailto:${props.email}`} rel="noreferrer">
-            {props.email}
-          </a>
-        </span>
-      </div>
+      <Item icon="BsGeoAltFill" className={Styles.contact__address}>
+        {props.address}
+      </Item>
+      <Item icon="BsClockFill" className={` ${Styles.contact__times}`}>
+        {props.workingTime}
+      </Item>
+      <Item icon="FaPhone" className={` ${Styles.contact__phone}`}>
+        <ContactPhone phone={props.phoneNumbers} />
+      </Item>
+      <Item icon="BsChatDotsFill" className={` ${Styles.contact__whatsapp}`}>
+        <a
+          target="_blank"
+          href={`https://wa.me/${props.whatsapp}`}
+          rel="noreferrer"
+        >
+          {props.whatsapp}
+        </a>
+      </Item>
+      <Item icon="FaMailBulk" className={`item ${Styles.contact__email}`}>
+        <a target={"_blank"} href={`mailto:${props.email}`} rel="noreferrer">
+          {props.email}
+        </a>
+      </Item>
     </div>
   );
 };

@@ -1,10 +1,6 @@
-@import "../themes/themes.scss";
 .item {
-  // display: flex;
-  // flex-wrap: wrap;
-  // align-items: center;
   svg {
-    margin-inline-end: $m-sm;
-    // display: ;
+    vertical-align: middle;
+    margin-inline-end: 1rem;
   }
 }

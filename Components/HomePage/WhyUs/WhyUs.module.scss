@@ -1,0 +1,31 @@
+@import "@/Styles/themes/themes";
+.whyus {
+  padding: $p-md;
+  &__body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  &__item {
+    flex: 1;
+    min-width: 30rem;
+    text-align: center;
+    margin: 0 $m-md $m-md;
+
+    &-title {
+      font-size: $fs-lg;
+      color: $primary;
+      font-family: $ff-cairo;
+      font-weight: 700;
+    }
+    &-icon {
+      font-size: $fs-ms;
+      color: darken($grey-lighter, 20%);
+      svg {
+        vertical-align: text-bottom;
+      }
+    }
+  }
+}

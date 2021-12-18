@@ -1,13 +1,33 @@
 @import "@/Styles/themes/themes";
 .partners {
   padding: $p-md;
+
+  &__container {
+    width: 100%;
+    overflow: hidden;
+    // display: flex;
+  }
+
   &__slider {
+    min-width: 100%;
     display: flex;
+    // animation: sliding 10s infinite normal;
+  }
+
+  &__item {
+    display: flex;
+    min-width: 100%;
     justify-content: space-around;
-    align-items: center;
+
     &-img {
       position: relative;
       width: 10rem;
     }
+  }
+}
+
+@keyframes sliding {
+  100% {
+    transform: translateX(100%);
   }
 }
