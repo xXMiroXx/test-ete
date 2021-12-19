@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { useCallback, useEffect, useRef, useState } from "react";
 import Styles from "./Partners.module.scss";
 
 const SliderImages: React.FC = () => {
@@ -37,29 +36,11 @@ const SliderImages: React.FC = () => {
 };
 
 const Partners: React.FC = () => {
-  const animatedRef = useRef<HTMLDivElement>(null);
-  const animateRequest = useRef(0);
-  const animateTimer = useRef(0);
-
-  const animate = useCallback(() => {
-    if (animatedRef.current) {
-      if (animateTimer.current >= 100) animateTimer.current = 0;
-      animatedRef.current.style.transform = `translateX(${animateTimer.current}%)`;
-      animateTimer.current += 0.1;
-    }
-    animateRequest.current = requestAnimationFrame(animate);
-  }, []);
-
-  useEffect(() => {
-    animateRequest.current = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(animateRequest.current);
-  }, [animate]);
-
   return (
     <section id="partners" className={Styles.partners}>
       <h2 className="heading-side">شركاء العمل</h2>
       <div className={Styles.partners__container}>
-        <div ref={animatedRef} className={Styles.partners__slider}>
+        <div className={Styles.partners__slider}>
           <SliderImages />
           <SliderImages />
         </div>

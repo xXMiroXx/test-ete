@@ -7,6 +7,7 @@ import Hero from "@/Components/HomePage/Hero/Hero";
 import fetchData from "@/helper/fetchData";
 import Partners from "@/Components/HomePage/Partners/Partners";
 import WhyUs from "@/Components/HomePage/WhyUs/WhyUs";
+import NoBorders from "@/Components/HomePage/NoBorders/NoBorders";
 
 const Home: NextPage<{ navList: NavListProps; contacts: ContactsProps }> = (
   props
@@ -15,6 +16,7 @@ const Home: NextPage<{ navList: NavListProps; contacts: ContactsProps }> = (
     <Layout navList={props.navList} contacts={props.contacts}>
       <Hero />
       <WhyUs />
+      <NoBorders />
       <Partners />
     </Layout>
   );

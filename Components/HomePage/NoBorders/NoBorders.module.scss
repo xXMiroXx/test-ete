@@ -1,0 +1,36 @@
+@import "@/Styles/themes/themes";
+.noborders {
+  padding: $p-md;
+  color: $grey-lighter;
+  background-image: linear-gradient(
+      to right,
+      rgba($grey-dark, 0.8),
+      rgba($grey-light, 0.9)
+    ),
+    url(/images/noborders/noborders-bg.jpg);
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+
+  &__body {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    padding: $p-md;
+    gap: 2rem;
+  }
+
+  &__text {
+    flex: 2 40rem;
+  }
+
+  &__img {
+    flex: 1 30rem;
+    position: relative;
+
+    span {
+      border-radius: $r-lg;
+    }
+
+    opacity: 0.7;
+  }
+}

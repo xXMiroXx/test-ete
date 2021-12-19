@@ -1,17 +1,17 @@
 @import "@/Styles/themes/themes";
 .partners {
   padding: $p-md;
+  color: $grey-light;
 
   &__container {
     width: 100%;
     overflow: hidden;
-    // display: flex;
   }
 
   &__slider {
     min-width: 100%;
     display: flex;
-    // animation: sliding 10s infinite normal;
+    animation: sliding 10s linear infinite;
   }
 
   &__item {
@@ -23,11 +23,5 @@
       position: relative;
       width: 10rem;
     }
-  }
-}
-
-@keyframes sliding {
-  100% {
-    transform: translateX(100%);
   }
 }
